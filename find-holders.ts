@@ -13,13 +13,13 @@ let totalAmount = BigNumber.from("0");
         promises.push(new Promise(async (resolve) => {
             const run = async () => {
                 try {
-                    const result = (await superagent.get(`https://api-cypress.scope.klaytn.com/v1/tokens/0x9cfc059f64d664f92f3d0329844b8ccca4e5215b/holders?page=${page}`)).body;
+                    const result = (await superagent.get(`https://api-cypress.scope.klaytn.com/v1/tokens/0x18814b01b5cc76f7043e10fd268cc4364df47da0/holders?page=${page}`)).body;
                     for (const data of result.result) {
                         // 에어드롭 풀 제외
                         if (
-                            data.address.toLowerCase() !== "0x9CFc059F64D664F92f3d0329844B8ccca4E5215B".toLowerCase() &&
-                            data.address.toLowerCase() !== "0x1dA9E7adfB6817D42b1c9a5321992B1EF97701Ab".toLowerCase() &&
-                            data.address.toLowerCase() !== "0x7D197D87Aa79E27bcdc3a62f819329deC6F81Ec2".toLowerCase()
+                            data.address.toLowerCase() !== "0x18814b01b5cc76f7043e10fd268cc4364df47da0".toLowerCase() &&
+                            data.address.toLowerCase() !== "0x280c0Ea797dCC1b1292975EB3Edb1886F89a37CD".toLowerCase() &&
+                            data.address.toLowerCase() !== "0xE1eFF4230c2cf812e4f5214ACe5a1888f2b1A68e".toLowerCase()
                         ) {
                             let amount = BigNumber.from(data.amountHeld);
                             if (exclude.includes(data.address) === true) {
