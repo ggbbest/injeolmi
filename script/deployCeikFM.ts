@@ -5,6 +5,7 @@ async function main() {
     const CeikFM = await hardhat.ethers.getContractFactory("CeikFM")
     const result = await CeikFM.deploy()
     console.log(` address: ${result.address}`)
+    console.log(` deployTransaction: ${result.deployTransaction}`)
 }
 
 main()

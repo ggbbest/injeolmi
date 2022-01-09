@@ -22,3 +22,5 @@ yarn add --dev hardhat
 yarn hardhat compile
 
 yarn hardhat run script/deployCeikFM.ts
+npx hardhat run script/deployCeikFM.ts --network klay
+npx hardhat run script/deployCeikFM.ts --network klay

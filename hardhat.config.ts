@@ -3,7 +3,7 @@ import "@nomiclabs/hardhat-waffle";
 import "dotenv/config";
 import "hardhat-typechain";
 import { HardhatUserConfig } from "hardhat/types";
-//CEIK_RPC=http://192.168.1.183:20000
+
 const config: HardhatUserConfig = {
   solidity: {
     version: "0.5.6",
