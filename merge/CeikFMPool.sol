@@ -156,16 +156,16 @@ library SafeMath {
     }
 }
 
-interface IInjeolmiPool {
+interface ICeikFMPool {
 
-    event SwapToIJM(address indexed user, uint256 amount);
+    event SwapToCFM(address indexed user, uint256 amount);
     event SwapToKlay(address indexed user, uint256 amount);
 
-    function swapToIJM() payable external;
+    function swapToCFM() payable external;
     function swapToKlay(uint256 amount) external;
 }
 
-interface IInjeolmi {
+interface ICeikFM {
 
     event Transfer(address indexed from, address indexed to, uint256 amount);
     event Approval(address indexed owner, address indexed spender, uint256 amount);
@@ -185,35 +185,35 @@ interface IInjeolmi {
     function allowance(address owner, address spender) external view returns (uint256 remaining);
 }
 
-contract InjeolmiPool is IInjeolmiPool {
+contract CeikFMPool is ICeikFMPool {
     using SafeMath for uint256;
 
-    IInjeolmi public ijm;
+    ICeikFM public cfm;
 
-    constructor(IInjeolmi _ijm) public {
-        ijm = _ijm;
+    constructor(ICeikFM _cfm) public {
+        cfm = _cfm;
     }
 
     function () payable external {}
 
-    function swapToIJM() external payable {
+    function swapToCFM() external payable {
         uint256 newKlay = address(this).balance;
-        uint256 lastIJM = ijm.balanceOf(address(this));
+        uint256 lastCFM = cfm.balanceOf(address(this));
 
-        uint256 newIJM = (newKlay.sub(msg.value)).mul(lastIJM).div(newKlay);
+        uint256 newCFM = (newKlay.sub(msg.value)).mul(lastCFM).div(newKlay);
 
-        ijm.transfer(msg.sender, lastIJM.sub(newIJM));
+        cfm.transfer(msg.sender, lastCFM.sub(newCFM));
 
-        emit SwapToIJM(msg.sender, msg.value);
+        emit SwapToCFM(msg.sender, msg.value);
     }
 
     function swapToKlay(uint256 amount) external {
         uint256 lastKlay = address(this).balance;
-        uint256 lastIJM = ijm.balanceOf(address(this));
+        uint256 lastCFM = cfm.balanceOf(address(this));
 
-        uint256 newKlay = lastIJM.mul(lastKlay).div(lastIJM.add(amount.mul(9).div(10)));
+        uint256 newKlay = lastCFM.mul(lastKlay).div(lastCFM.add(amount.mul(9).div(10)));
 
-        ijm.transferFrom(msg.sender, address(this), amount);
+        cfm.transferFrom(msg.sender, address(this), amount);
         msg.sender.transfer(lastKlay.sub(newKlay));
 
         emit SwapToKlay(msg.sender, amount);
@@ -221,13 +221,13 @@ contract InjeolmiPool is IInjeolmiPool {
 
     function addLiquidity() external payable {
         uint256 lastKlay = (address(this).balance).sub(msg.value);
-        uint256 lastIJM = ijm.balanceOf(address(this));
+        uint256 lastCFM = cfm.balanceOf(address(this));
 
-        uint256 inputIJM = lastIJM.mul(msg.value).div(lastKlay);
-        if(ijm.excluded(msg.sender)) {
-            ijm.transferFrom(msg.sender, address(this), inputIJM);
+        uint256 inputCFM = lastCFM.mul(msg.value).div(lastKlay);
+        if(cfm.excluded(msg.sender)) {
+            cfm.transferFrom(msg.sender, address(this), inputCFM);
         } else {
-            ijm.transferFrom(msg.sender, address(this), inputIJM.mul(10).div(9));
+            cfm.transferFrom(msg.sender, address(this), inputCFM.mul(10).div(9));
         }
     }
 }

@@ -3,16 +3,17 @@ import "@nomiclabs/hardhat-waffle";
 import "dotenv/config";
 import "hardhat-typechain";
 import { HardhatUserConfig } from "hardhat/types";
-
+//CEIK_RPC=http://192.168.1.183:20000
 const config: HardhatUserConfig = {
   solidity: {
     version: "0.5.6",
   },
   networks: {
-    kovan: {
-      url: `https://kovan.infura.io/v3/${process.env.INFURA_API_KEY}`,
-      accounts: [process.env.ADMIN || ''],
-      chainId: 42,
+    klay: {
+      // url: `https://public-node-api.klaytnapi.com/v1/cypress`,
+      url: `http://192.168.1.183:20000`,
+      accounts: [process.env.PK || ''],
+      chainId: 8217,
     },
   },
   etherscan: {

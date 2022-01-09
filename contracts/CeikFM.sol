@@ -3,16 +3,16 @@ pragma solidity ^0.5.6;
 import "./klaytn-contracts/ownership/Ownable.sol";
 import "./klaytn-contracts/math/SafeMath.sol";
 import "./klaytn-contracts/lifecycle/Pausable.sol";
-import "./interfaces/IInjeolmi.sol";
+import "./interfaces/ICeikFM.sol";
 
 // 우리나라에는 새로 이사를 오면 떡을 돌리는 풍습이 있습니다.
 // 이런 "떡돌리기" 문화를 토크노믹스로 만들어 보았습니다.
 // 한국인의 정과 훈훈한 인심을 느껴보세요.
-contract Injeolmi is Ownable, Pausable, IInjeolmi {
+contract CeikFM is Ownable, Pausable, ICeikFM {
     using SafeMath for uint256;
 
-    string public constant NAME = "Injeolmi";
-    string public constant SYMBOL = "IJM";
+    string public constant NAME = "CeikFM";
+    string public constant SYMBOL = "CFM";
     uint8 public constant DECIMALS = 8;
 
     // 1억개 발행, 추가 발행 없음

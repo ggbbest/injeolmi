@@ -20,3 +20,5 @@ CEIK Decimal : 8
 2022-01-09
 yarn add --dev hardhat
 yarn hardhat compile
+
+yarn hardhat run script/deployCeikFM.ts

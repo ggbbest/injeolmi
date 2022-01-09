@@ -230,7 +230,7 @@ library SafeMath {
     }
 }
 
-interface IInjeolmi {
+interface ICeikFM {
 
     event Transfer(address indexed from, address indexed to, uint256 amount);
     event Approval(address indexed owner, address indexed spender, uint256 amount);
@@ -253,16 +253,16 @@ interface IInjeolmi {
 contract Airdrop is Ownable {
     using SafeMath for uint256;
 
-    IInjeolmi public ijm;
+    ICeikFM public cfm;
 
-    constructor(IInjeolmi _ijm) public {
-        ijm = _ijm;
+    constructor(ICeikFM _cfm) public {
+        cfm = _cfm;
     }
 
     function airdrop(address[] calldata to, uint256 amount) payable external onlyOwner {
         uint256 len = to.length;
         for (uint256 i = 0; i < len; i = i.add(1)) {
-            ijm.transfer(to[i], amount);
+            cfm.transfer(to[i], amount);
         }
     }
 }
