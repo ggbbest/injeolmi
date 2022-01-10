@@ -1,9 +1,10 @@
 /*
 Metadata of "injeolmipool" was published successfully.
-InjeolmiPool.sol : 
-ipfs://QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
-metadata.json : 
-ipfs://QmXvpfK2vXNgnCgaDGkbv4x9cGZauT4xFReroAJaDP24nw
+InjeolmiPool.sol : ipfs://QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
+https://ipfs.io/ipfs/QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
+metadata.json : ipfs://QmXvpfK2vXNgnCgaDGkbv4x9cGZauT4xFReroAJaDP24nw
+https://ipfs.io/ipfs/QmXvpfK2vXNgnCgaDGkbv4x9cGZauT4xFReroAJaDP24nw
+
 0x9fB81EBD149b8d7D189E28F3a33598D066e1c067
 
 */

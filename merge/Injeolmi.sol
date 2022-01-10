@@ -1,9 +1,10 @@
 /*
 Metadata of "injeolmi" was published successfully.
-Injeolmi.sol : 
-ipfs://QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
-metadata.json : 
-ipfs://QmXbsx68qMWdyNyAFxmofLQhy5haGiEYuKxvrCiAsJDTqU
+Injeolmi.sol  : ipfs://QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
+https://ipfs.io/ipfs/QmbFMke1KXqnYyBBWxB74N4c5SBnJMVAiMNRcGu6x1AwQH
+metadata.json : ipfs://QmXbsx68qMWdyNyAFxmofLQhy5haGiEYuKxvrCiAsJDTqU
+https://ipfs.io/ipfs/QmXbsx68qMWdyNyAFxmofLQhy5haGiEYuKxvrCiAsJDTqU
+
 0xAa44E71f896b7470CDF1b45139820848679D5e87
 
 */
