@@ -1,11 +1,11 @@
 import hardhat from "hardhat";
+// import "./contracts/interfaces/ICeikFM.sol";
 
 async function main() {
     console.log("deploy start")
     const CeikFM = await hardhat.ethers.getContractFactory("CeikFM")
     const result = await CeikFM.deploy()
     console.log(` address: ${result.address}`)
-    console.log(` deployTransaction: ${result.deployTransaction}`)
 }
 
 main()
